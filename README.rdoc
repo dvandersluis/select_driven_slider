@@ -1,0 +1,10 @@
+= Select Driven Slider 
+
+== Description
+Provides a helper tag +select_driven_slider_tag+ which creates a Scriptaculous slider control which gracefully degrades to a select box.
+
+== Usage
+    select_driven_slider_tag name, values, default_value, slider_options
+
+== Requirements
+* This plugin requires Prototype and Scriptaculous

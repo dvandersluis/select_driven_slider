@@ -1,0 +1,19 @@
+.slider .track {
+  width: 200px;
+  height: 9px;
+  float: left;
+  position: relative;
+  top: 4px;
+  background-color: #C0C0C0 }
+.slider .track-left {
+  position: absolute;
+  width: 5px;
+  height: 9px;
+  background-color: #C0C0C0 }
+.slider .handle {
+  background-color: #5FA8FF;
+  width: 19px;
+  height: 20px; }
+.slider .track-label {
+  margin-left: 5px;
+  float: left; }
