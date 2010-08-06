@@ -7,6 +7,8 @@ module SelectDrivenSliderHelper
     out << stylesheet_link_tag('slider')
     out << select_tag(name, options)
 
+    values.map! { |v| v.is_a?(Array) ? v.last : v }
+
     id_base = name.gsub(/[\[\]]+/, "_").sub(/_+$/, "")
     
     out << content_tag(:div, :class => "slider", :id => id_base + "_slider", :style => "display: none;") do
@@ -18,7 +20,7 @@ module SelectDrivenSliderHelper
         end
       end <<
       content_tag(:div, :class => "track-label", :id => id_base + "_track-label") do
-        default || values.first
+        slider_options["defaultLabelValue"] || default || values.first
       end <<
       tag(:br, :style => "clear: both;")
     end
@@ -48,7 +50,7 @@ module SelectDrivenSliderHelper
           {
             for (var i = 0; i < select.options.length; i++)
             {
-              if (select.options[i].value == value + "%")
+              if (select.options[i].value == value)
               {
                 select.selectedIndex = i;
                 break;
